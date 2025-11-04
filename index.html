@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vini D'Tiriri — Consultas Espirituais</title>
+  <style>
+    :root{
+      --bg:#070507;
+      --red:#9b0f0f;
+      --gold:#c9a23a;
+      --muted:#bfb8b8;
+      --card:#0f0c0c;
+      font-family: 'Poppins', system-ui, sans-serif;
+    }
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0b0607);color:#fff;text-align:center;}
+    header{padding:24px 12px;background:radial-gradient(circle at center,rgba(155,15,15,0.4),transparent 70%);}
+    header h1{font-size:22px;margin:0;color:var(--gold);text-shadow:0 0 8px rgba(201,162,58,0.4)}
+    header p{margin:8px 0 0;color:var(--muted);}
+
+    .hero{background:url('https://i.imgur.com/8YwC9RC.jpg') center/cover no-repeat;position:relative;padding:80px 12px;color:#fff;}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.65);}
+    .hero-content{position:relative;z-index:2;max-width:480px;margin:auto;}
+    .hero-content p{font-size:16px;line-height:1.5;margin-bottom:20px;}
+    .hero-content a{display:inline-block;background:linear-gradient(90deg,var(--red),#7b0505);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(155,15,15,0.25)}
+
+    section.services{padding:28px 12px;background:linear-gradient(180deg,#0b0607,var(--bg));}
+    .service{background:rgba(255,255,255,0.05);margin:10px auto;max-width:500px;padding:14px;border-radius:14px;text-align:left;display:flex;justify-content:space-between;align-items:center;}
+    .service .info{flex:1}
+    .service h3{margin:0 0 6px;font-size:15px;color:var(--gold)}
+    .service p{margin:0;font-size:13px;color:var(--muted)}
+    .service .price{font-weight:700;color:var(--gold)}
+    .service button{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
+
+    form{max-width:480px;margin:24px auto;padding:20px;background:rgba(255,255,255,0.05);border-radius:14px;text-align:left;}
+    label{display:block;margin-bottom:6px;font-size:14px;color:var(--muted)}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#fff;margin-bottom:12px;}
+    button.submit{width:100%;background:linear-gradient(90deg,var(--gold),#b98d2e);border:none;padding:12px;font-weight:700;color:#111;border-radius:10px;cursor:pointer}
+
+    footer{padding:18px;color:var(--muted);font-size:13px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vini D'Tiriri</h1>
+    <p>Cartomante — Baralho de Exu</p>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <p>Boa noite moço(a), me chamo Vinícius, muito prazer. Trabalho atualmente com o <strong>baralho de Exu</strong>.</p>
+      <a href="#agendar">Agendar Consulta</a>
+    </div>
+  </div>
+
+  <section class="services">
+    <div class="service"><div class="info"><h3>1 Pergunta</h3><p>1 pergunta direta.</p></div><div><span class="price">R$9</span><br><button onclick="selectService('1 Pergunta — R$9')">Agendar agora</button></div></div>
+    <div class="service"><div class="info"><h3>2 Perguntas</h3><p>Duas perguntas diretas.</p></div><div><span class="price">R$19</span><br><button onclick="selectService('2 Perguntas — R$19')">Agendar agora</button></div></div>
+    <div class="service"><div class="info"><h3>3 Perguntas + Conselho Espiritual</h3><p>Leitura completa com conselho espiritual.</p></div><div><span class="price">R$25</span><br><button onclick="selectService('3 Perguntas + Conselho Espiritual — R$25')">Agendar agora</button></div></div>
+    <div class="service"><div class="info"><h3>Jogo Completo 30min</h3><p>Perguntas ilimitadas durante 30 minutos.</p></div><div><span class="price">R$70</span><br><button onclick="selectService('Jogo Completo 30min — R$70')">Agendar agora</button></div></div>
+    <div class="service"><div class="info"><h3>Jogo Completo 1h</h3><p>Perguntas ilimitadas durante 1 hora.</p></div><div><span class="price">R$120</span><br><button onclick="selectService('Jogo Completo 1h — R$120')">Agendar agora</button></div></div>
+  </section>
+
+  <form id="agendar">
+    <h2 style="text-align:center;color:var(--gold);">Agendar Consulta</h2>
+    <label>Nome completo</label>
+    <input id="nome" placeholder="Ex: Maria Silva" required>
+    <label>WhatsApp (com DDD)</label>
+    <input id="whats" placeholder="16999999999" required>
+    <label>Serviço escolhido</label>
+    <select id="servico">
+      <option value="1 Pergunta — R$9">1 Pergunta — R$9</option>
+      <option value="2 Perguntas — R$19">2 Perguntas — R$19</option>
+      <option value="3 Perguntas + Conselho Espiritual — R$25">3 Perguntas + Conselho Espiritual — R$25</option>
+      <option value="Jogo Completo 30min — R$70">Jogo Completo 30min — R$70</option>
+      <option value="Jogo Completo 1h — R$120">Jogo Completo 1h — R$120</option>
+    </select>
+    <label>Data</label>
+    <input type="date" id="data" required>
+    <label>Hora (10h às 23h)</label>
+    <input type="time" id="hora" required>
+    <button type="button" class="submit" onclick="enviarWhats()">Enviar no WhatsApp para a consulta</button>
+  </form>
+
+  <footer>
+    Atendimento: Segunda a Sábado das 10h às 23h • WhatsApp: (16) 98131-4631
+  </footer>
+
+  <script>
+    function selectService(servico){
+      document.getElementById('servico').value = servico;
+      window.scrollTo({top:document.getElementById('agendar').offsetTop,behavior:'smooth'});
+    }
+
+    function enviarWhats(){
+      const nome=document.getElementById('nome').value.trim();
+      const whats=document.getElementById('whats').value.trim();
+      const servico=document.getElementById('servico').value;
+      const data=document.getElementById('data').value;
+      const hora=document.getElementById('hora').value;
+      if(!nome||!whats||!data||!hora){alert('Preencha todos os campos.');return;}
+      const msg=`Olá Vini D'Tiriri 🌙%0AGostaria de agendar uma consulta.%0A%0A*Nome:* ${nome}%0A*WhatsApp:* ${whats}%0A*Serviço:* ${servico}%0A*Data:* ${data}%0A*Hora:* ${hora}`;
+      const url=`https://api.whatsapp.com/send?phone=5516981314631&text=${msg}`;
+      window.open(url,'_blank');
+    }
+  </script>
+</body>
+</html>
