@@ -1,107 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vini D'Tiriri — Consultas Espirituais</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vini d'Tiriri - Cartomancia</title>
   <style>
-    :root{
-      --bg:#070507;
-      --red:#9b0f0f;
-      --gold:#c9a23a;
-      --muted:#bfb8b8;
-      --card:#0f0c0c;
-      font-family: 'Poppins', system-ui, sans-serif;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #000000 70%, #1a0000 100%);
+      color: #fff;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/9419/9419391.png');
+      background-repeat: no-repeat;
+      background-size: 180px;
+      background-position: center 140px;
     }
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#0b0607);color:#fff;text-align:center;}
-    header{padding:24px 12px;background:radial-gradient(circle at center,rgba(155,15,15,0.4),transparent 70%);}
-    header h1{font-size:22px;margin:0;color:var(--gold);text-shadow:0 0 8px rgba(201,162,58,0.4)}
-    header p{margin:8px 0 0;color:var(--muted);}
 
-    .hero{background:url('https://i.imgur.com/8YwC9RC.jpg') center/cover no-repeat;position:relative;padding:80px 12px;color:#fff;}
-    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.65);}
-    .hero-content{position:relative;z-index:2;max-width:480px;margin:auto;}
-    .hero-content p{font-size:16px;line-height:1.5;margin-bottom:20px;}
-    .hero-content a{display:inline-block;background:linear-gradient(90deg,var(--red),#7b0505);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(155,15,15,0.25)}
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid #b30000;
+      box-shadow: 0 0 20px #b30000;
+    }
 
-    section.services{padding:28px 12px;background:linear-gradient(180deg,#0b0607,var(--bg));}
-    .service{background:rgba(255,255,255,0.05);margin:10px auto;max-width:500px;padding:14px;border-radius:14px;text-align:left;display:flex;justify-content:space-between;align-items:center;}
-    .service .info{flex:1}
-    .service h3{margin:0 0 6px;font-size:15px;color:var(--gold)}
-    .service p{margin:0;font-size:13px;color:var(--muted)}
-    .service .price{font-weight:700;color:var(--gold)}
-    .service button{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
+    header h1 {
+      font-size: 2rem;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ffd700;
+      margin: 0;
+    }
 
-    form{max-width:480px;margin:24px auto;padding:20px;background:rgba(255,255,255,0.05);border-radius:14px;text-align:left;}
-    label{display:block;margin-bottom:6px;font-size:14px;color:var(--muted)}
-    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#fff;margin-bottom:12px;}
-    button.submit{width:100%;background:linear-gradient(90deg,var(--gold),#b98d2e);border:none;padding:12px;font-weight:700;color:#111;border-radius:10px;cursor:pointer}
+    section {
+      padding: 1.5rem;
+      text-align: center;
+    }
 
-    footer{padding:18px;color:var(--muted);font-size:13px;}
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ffd700;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 15px #b30000;
+      margin-bottom: 1rem;
+    }
+
+    .horario {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffd700;
+      margin: 1rem 0;
+      text-shadow: 0 0 8px #ff0000;
+    }
+
+    .servicos {
+      background: rgba(20, 0, 0, 0.7);
+      border: 2px solid #b30000;
+      border-radius: 15px;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .servicos h2 {
+      color: #ffd700;
+      text-shadow: 0 0 10px #b30000;
+      margin-bottom: 1rem;
+    }
+
+    .opcao {
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 1px solid #ff0000;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 10px #b30000;
+    }
+
+    .opcao p {
+      margin: 0.5rem 0;
+      color: #fff;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff0000, #ffd700);
+      color: #000;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff0000;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px #ffd700;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      color: #ffd700;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 2px solid #b30000;
+      box-shadow: 0 0 15px #b30000;
+      margin-top: 2rem;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #b30000;
+      margin-top: 1rem;
+    }
+
+    input {
+      width: 90%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      border: 1px solid #ff0000;
+      background: rgba(20, 0, 0, 0.7);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Vini D'Tiriri</h1>
-    <p>Cartomante — Baralho de Exu</p>
+    <h1>Vini d'Tiriri 🔥</h1>
   </header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <p>Boa noite moço(a), me chamo Vinícius, muito prazer. Trabalho atualmente com o <strong>baralho de Exu</strong>.</p>
-      <a href="#agendar">Agendar Consulta</a>
-    </div>
-  </div>
-
-  <section class="services">
-    <div class="service"><div class="info"><h3>1 Pergunta</h3><p>1 pergunta direta.</p></div><div><span class="price">R$9</span><br><button onclick="selectService('1 Pergunta — R$9')">Agendar agora</button></div></div>
-    <div class="service"><div class="info"><h3>2 Perguntas</h3><p>Duas perguntas diretas.</p></div><div><span class="price">R$19</span><br><button onclick="selectService('2 Perguntas — R$19')">Agendar agora</button></div></div>
-    <div class="service"><div class="info"><h3>3 Perguntas + Conselho Espiritual</h3><p>Leitura completa com conselho espiritual.</p></div><div><span class="price">R$25</span><br><button onclick="selectService('3 Perguntas + Conselho Espiritual — R$25')">Agendar agora</button></div></div>
-    <div class="service"><div class="info"><h3>Jogo Completo 30min</h3><p>Perguntas ilimitadas durante 30 minutos.</p></div><div><span class="price">R$70</span><br><button onclick="selectService('Jogo Completo 30min — R$70')">Agendar agora</button></div></div>
-    <div class="service"><div class="info"><h3>Jogo Completo 1h</h3><p>Perguntas ilimitadas durante 1 hora.</p></div><div><span class="price">R$120</span><br><button onclick="selectService('Jogo Completo 1h — R$120')">Agendar agora</button></div></div>
+  <section class="intro">
+    <p>Boa noite moço(a), me chamo Vinícius, muito prazer. Trabalho atualmente com o baralho de Exu.</p>
   </section>
 
-  <form id="agendar">
-    <h2 style="text-align:center;color:var(--gold);">Agendar Consulta</h2>
-    <label>Nome completo</label>
-    <input id="nome" placeholder="Ex: Maria Silva" required>
-    <label>WhatsApp (com DDD)</label>
-    <input id="whats" placeholder="16999999999" required>
-    <label>Serviço escolhido</label>
-    <select id="servico">
-      <option value="1 Pergunta — R$9">1 Pergunta — R$9</option>
-      <option value="2 Perguntas — R$19">2 Perguntas — R$19</option>
-      <option value="3 Perguntas + Conselho Espiritual — R$25">3 Perguntas + Conselho Espiritual — R$25</option>
-      <option value="Jogo Completo 30min — R$70">Jogo Completo 30min — R$70</option>
-      <option value="Jogo Completo 1h — R$120">Jogo Completo 1h — R$120</option>
-    </select>
-    <label>Data</label>
-    <input type="date" id="data" required>
-    <label>Hora (10h às 23h)</label>
-    <input type="time" id="hora" required>
-    <button type="button" class="submit" onclick="enviarWhats()">Enviar no WhatsApp para a consulta</button>
-  </form>
+  <div class="horario">
+    🔮 <strong>Horários de consulta:</strong> Segunda a Sexta, das 10h às 23h
+  </div>
+
+  <section class="servicos">
+    <h2>Serviços de Cartomancia</h2>
+
+    <div class="opcao">
+      <p>✨ 1 Pergunta - <strong>R$9,00</strong></p>
+      <button onclick="agendar('1 Pergunta - R$9,00')">Agendar agora</button>
+    </div>
+
+    <div class="opcao">
+      <p>🔮 2 Perguntas - <strong>R$19,00</strong></p>
+      <button onclick="agendar('2 Perguntas - R$19,00')">Agendar agora</button>
+    </div>
+
+    <div class="opcao">
+      <p>🔥 3 Perguntas + Conselho Espiritual - <strong>R$25,00</strong></p>
+      <button onclick="agendar('3 Perguntas + Conselho Espiritual - R$25,00')">Agendar agora</button>
+    </div>
+
+    <div class="opcao">
+      <p>🕯️ Jogo Completo (30 minutos, perguntas ilimitadas) - <strong>R$70,00</strong></p>
+      <button onclick="agendar('Jogo Completo 30min - R$70,00')">Agendar agora</button>
+    </div>
+
+    <div class="opcao">
+      <p>⚡ Jogo Completo (1 hora, perguntas ilimitadas) - <strong>R$120,00</strong></p>
+      <button onclick="agendar('Jogo Completo 1h - R$120,00')">Agendar agora</button>
+    </div>
+  </section>
+
+  <section id="agendamento">
+    <h2 style="color:#ffd700; text-shadow:0 0 10px #b30000;">Agendar Consulta</h2>
+    <form id="formAgendamento">
+      <input type="text" id="nome" placeholder="Seu nome completo" required><br>
+      <input type="text" id="whatsapp" placeholder="Seu número de WhatsApp" required><br>
+      <button type="button" onclick="enviarWhatsApp()">Enviar no WhatsApp para a consulta</button>
+    </form>
+  </section>
 
   <footer>
-    Atendimento: Segunda a Sábado das 10h às 23h • WhatsApp: (16) 98131-4631
+    <p>Vini d'Tiriri © 2025 — Cartomancia & Luz 🔥</p>
   </footer>
 
   <script>
-    function selectService(servico){
-      document.getElementById('servico').value = servico;
-      window.scrollTo({top:document.getElementById('agendar').offsetTop,behavior:'smooth'});
+    function agendar(servico) {
+      document.getElementById('formAgendamento').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('formAgendamento').dataset.servico = servico;
     }
 
-    function enviarWhats(){
-      const nome=document.getElementById('nome').value.trim();
-      const whats=document.getElementById('whats').value.trim();
-      const servico=document.getElementById('servico').value;
-      const data=document.getElementById('data').value;
-      const hora=document.getElementById('hora').value;
-      if(!nome||!whats||!data||!hora){alert('Preencha todos os campos.');return;}
-      const msg=`Olá Vini D'Tiriri 🌙%0AGostaria de agendar uma consulta.%0A%0A*Nome:* ${nome}%0A*WhatsApp:* ${whats}%0A*Serviço:* ${servico}%0A*Data:* ${data}%0A*Hora:* ${hora}`;
-      const url=`https://api.whatsapp.com/send?phone=5516981314631&text=${msg}`;
-      window.open(url,'_blank');
+    function enviarWhatsApp() {
+      const nome = document.getElementById('nome').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+      const servico = document.getElementById('formAgendamento').dataset.servico || "Consulta espiritual";
+      if (!nome || !whatsapp) {
+        alert("Por favor, preencha seu nome completo e número de WhatsApp.");
+        return;
+      }
+
+      const mensagem = `Olá Vini d'Tiriri! Meu nome é ${nome}. Quero agendar: ${servico}. Meu WhatsApp é ${whatsapp}.`;
+      const url = `https://wa.me/5516981314631?text=${encodeURIComponent(mensagem)}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
