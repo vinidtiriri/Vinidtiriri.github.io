@@ -107,73 +107,51 @@
   <section>
     <p>Boa noite moço(a), me chamo Vinícius, muito prazer. Trabalho atualmente com o baralho de Exu.</p>
     <p class="horario">🕯️ Horários de consulta: Segunda a Sexta, das 10h às 23h</p>
-    <button onclick="document.getElementById('agendamento').scrollIntoView({behavior:'smooth'});">Agendar Consulta</button>
+    <button onclick="document.getElementById('servicos').scrollIntoView({behavior:'smooth'});">Agendar Consulta</button>
   </section>
 
-  <section>
+  <section id="servicos">
     <h2>💫 Meus Serviços 💫</h2>
 
     <div class="servico">
       <h3>1 Pergunta - R$9</h3>
-      <button onclick="agendar('1 Pergunta - R$9')">Agendar agora</button>
+      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%20a%20consulta%20de%201%20pergunta%20(R$9)." target="_blank">
+        <button>Agendar agora</button>
+      </a>
     </div>
 
     <div class="servico">
       <h3>2 Perguntas - R$19</h3>
-      <button onclick="agendar('2 Perguntas - R$19')">Agendar agora</button>
+      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%20a%20consulta%20de%202%20perguntas%20(R$19)." target="_blank">
+        <button>Agendar agora</button>
+      </a>
     </div>
 
     <div class="servico">
       <h3>3 Perguntas + Conselho Espiritual - R$25</h3>
-      <button onclick="agendar('3 Perguntas + Conselho Espiritual - R$25')">Agendar agora</button>
+      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%203%20perguntas%20com%20conselho%20espiritual%20(R$25)." target="_blank">
+        <button>Agendar agora</button>
+      </a>
     </div>
 
     <div class="servico">
       <h3>Jogo Completo (30 min) - R$70</h3>
-      <button onclick="agendar('Jogo Completo 30min - R$70')">Agendar agora</button>
+      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Gostaria%20de%20agendar%20o%20jogo%20completo%20de%2030%20minutos%20(R$70)." target="_blank">
+        <button>Agendar agora</button>
+      </a>
     </div>
 
     <div class="servico">
       <h3>Jogo Completo (1 hora) - R$120</h3>
-      <button onclick="agendar('Jogo Completo 1h - R$120')">Agendar agora</button>
+      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Gostaria%20de%20agendar%20o%20jogo%20completo%20de%201%20hora%20(R$120)." target="_blank">
+        <button>Agendar agora</button>
+      </a>
     </div>
-  </section>
-
-  <section id="agendamento">
-    <h2>🕯️ Agendamento 🕯️</h2>
-    <p>Preencha os dados para entrar em contato comigo:</p>
-    <input type="text" id="nome" placeholder="Nome completo" /><br>
-    <input type="text" id="whatsapp" placeholder="Número do WhatsApp" /><br>
-    <button onclick="enviarWhatsApp()">Enviar no WhatsApp para a consulta</button>
   </section>
 
   <footer>
     <p>© 2025 Vini d'Tiriri - Consultas com o Baralho de Exu 🔮</p>
   </footer>
-
-  <script>
-    function agendar(servico) {
-      const nome = prompt("Digite seu nome completo:");
-      const numero = prompt("Digite seu número de WhatsApp:");
-      if (nome && numero) {
-        const texto = `Olá Vini d'Tiriri! Me chamo ${nome} e gostaria de agendar o serviço: ${servico}. Meu número é ${numero}.`;
-        const link = `https://wa.me/5516981314631?text=${encodeURIComponent(texto)}`;
-        window.open(link, "_blank");
-      }
-    }
-
-    function enviarWhatsApp() {
-      const nome = document.getElementById("nome").value;
-      const numero = document.getElementById("whatsapp").value;
-      if (nome && numero) {
-        const texto = `Olá Vini d'Tiriri! Me chamo ${nome} e gostaria de agendar uma consulta. Meu número é ${numero}.`;
-        const link = `https://wa.me/5516981314631?text=${encodeURIComponent(texto)}`;
-        window.open(link, "_blank");
-      } else {
-        alert("Por favor, preencha todos os campos antes de enviar.");
-      }
-    }
-  </script>
 
 </body>
 </html>
