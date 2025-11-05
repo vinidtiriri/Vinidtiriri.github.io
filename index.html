@@ -59,10 +59,6 @@
       color: #d4af37;
     }
 
-    .servico p {
-      color: #fff;
-    }
-
     button {
       background-color: transparent;
       border: 2px solid #d4af37;
@@ -96,6 +92,13 @@
       color: #fff;
       width: 80%;
     }
+
+    label {
+      color: #d4af37;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -115,43 +118,73 @@
 
     <div class="servico">
       <h3>1 Pergunta - R$9</h3>
-      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%20a%20consulta%20de%201%20pergunta%20(R$9)." target="_blank">
-        <button>Agendar agora</button>
-      </a>
+      <button onclick="agendar('1 Pergunta - R$9')">Agendar agora</button>
     </div>
 
     <div class="servico">
       <h3>2 Perguntas - R$19</h3>
-      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%20a%20consulta%20de%202%20perguntas%20(R$19)." target="_blank">
-        <button>Agendar agora</button>
-      </a>
+      <button onclick="agendar('2 Perguntas - R$19')">Agendar agora</button>
     </div>
 
     <div class="servico">
       <h3>3 Perguntas + Conselho Espiritual - R$25</h3>
-      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Quero%20fazer%203%20perguntas%20com%20conselho%20espiritual%20(R$25)." target="_blank">
-        <button>Agendar agora</button>
-      </a>
+      <button onclick="agendar('3 Perguntas + Conselho Espiritual - R$25')">Agendar agora</button>
     </div>
 
     <div class="servico">
       <h3>Jogo Completo (30 min) - R$70</h3>
-      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Gostaria%20de%20agendar%20o%20jogo%20completo%20de%2030%20minutos%20(R$70)." target="_blank">
-        <button>Agendar agora</button>
-      </a>
+      <button onclick="agendar('Jogo Completo 30min - R$70')">Agendar agora</button>
     </div>
 
     <div class="servico">
       <h3>Jogo Completo (1 hora) - R$120</h3>
-      <a href="https://wa.me/5516981314631?text=Olá%20Vini%20d'Tiriri!%20Gostaria%20de%20agendar%20o%20jogo%20completo%20de%201%20hora%20(R$120)." target="_blank">
-        <button>Agendar agora</button>
-      </a>
+      <button onclick="agendar('Jogo Completo 1h - R$120')">Agendar agora</button>
     </div>
+  </section>
+
+  <section id="agendamento">
+    <h2>🕯️ Agendamento 🕯️</h2>
+    <p>Preencha seus dados para entrar em contato comigo:</p>
+
+    <label for="nome">Nome completo:</label>
+    <input type="text" id="nome" placeholder="Seu nome completo" />
+
+    <label for="whatsapp">Número do WhatsApp:</label>
+    <input type="text" id="whatsapp" placeholder="(DDD) 9xxxx-xxxx" />
+
+    <button onclick="enviarWhatsApp()">Enviar no WhatsApp para a consulta</button>
   </section>
 
   <footer>
     <p>© 2025 Vini d'Tiriri - Consultas com o Baralho de Exu 🔮</p>
   </footer>
+
+  <script>
+    function agendar(servico) {
+      const nome = document.getElementById("nome").value;
+      const numero = document.getElementById("whatsapp").value;
+      if (!nome || !numero) {
+        alert("Por favor, preencha seu nome completo e número de WhatsApp antes de agendar.");
+        document.getElementById("agendamento").scrollIntoView({behavior:'smooth'});
+        return;
+      }
+      const texto = `Olá Vini d'Tiriri! Me chamo ${nome} e gostaria de agendar o serviço: ${servico}. Meu número é ${numero}.`;
+      const link = `https://wa.me/5516981314631?text=${encodeURIComponent(texto)}`;
+      window.open(link, "_blank");
+    }
+
+    function enviarWhatsApp() {
+      const nome = document.getElementById("nome").value;
+      const numero = document.getElementById("whatsapp").value;
+      if (nome && numero) {
+        const texto = `Olá Vini d'Tiriri! Me chamo ${nome} e gostaria de agendar uma consulta. Meu número é ${numero}.`;
+        const link = `https://wa.me/5516981314631?text=${encodeURIComponent(texto)}`;
+        window.open(link, "_blank");
+      } else {
+        alert("Por favor, preencha todos os campos antes de enviar.");
+      }
+    }
+  </script>
 
 </body>
 </html>
